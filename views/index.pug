@@ -1,0 +1,14 @@
+html
+  head
+    title= title
+  body
+    h1= title
+    form(action="/upload", method="post" enctype="multipart/form-data")
+        div
+            label(for = "image")  Select Image
+            input(type="file", name="image" id="image")
+        div
+            button="Upload!"
+    h2="Uploaded Images"
+    each image in images
+     img(src="./uploads/" + image, style = "height:100px")
